@@ -1,0 +1,67 @@
+package edu.jspider.jdbc.operation;
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class InsertOperation {
+	private static Driver driver;
+	private static Connection connection;
+	private static Statement statement;
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+		openConnection();
+		
+		String insertUser="insert into user values(1,'ash','a@gmail.com',1286667898,'Akki@1011')";
+		statement=connection.createStatement();
+		int rows=statement.executeUpdate(insertUser);
+		if(rows==1)
+		{
+			System.out.println(rows+" rows affected ");
+		}
+		else {
+			System.out.println("something went wrong");
+
+			}
+		
+		closeConnection();
+		// TODO Auto-generated method stub
+
+	}
+	
+	
+	private static void openConnection() throws ClassNotFoundException, SQLException
+	{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		driver=new com.mysql.cj.jdbc.Driver();
+		DriverManager.registerDriver(driver);
+		 
+		String url="jdbc:mysql://localhost:3306/test";
+		 String dbName="test";
+		 String user="root";
+		 String password="root";
+		
+		connection=DriverManager.getConnection(url,user,password);
+		
+	}
+	
+	
+	private static void closeConnection() throws SQLException
+	{
+		if(statement!=null)
+		{
+			statement.close();
+		}
+		if(connection!=null)
+		{
+			connection.close();
+		}
+		if(driver!=null)
+		{
+			DriverManager.deregisterDriver(driver);
+		}
+	}
+
+}

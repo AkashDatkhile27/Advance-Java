@@ -1,0 +1,14 @@
+ package main;
+
+import resources.Product;
+import thread.Consumer;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Product product=new Product(0);
+		Consumer consumer=new Consumer(product);
+	}
+
+}

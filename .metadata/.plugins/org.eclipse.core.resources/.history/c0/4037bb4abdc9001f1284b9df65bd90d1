@@ -1,0 +1,7 @@
+package resources;
+
+public class ThreadResource {
+
+	Object obj1=new Object();
+	Object obj2=new Object();
+}

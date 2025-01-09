@@ -1,0 +1,65 @@
+package edu.jspider.jdbc.operation;
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class InsertOperation {
+	private static Driver driver;
+	private static Connection connection;
+	private static Statement statement;
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+		openConnection();
+		
+		String inserUser="insert into user(1,'Akash','akki@gmail.com',1234567898,'Akki@1011')";
+		statement=connection.createStatement();
+		boolean res=statement.execute(inserUser);
+		if(res==true)
+		{
+			System.out.println("record is inserted successfully");
+		}
+		else {
+			System.out.println("something went wrong");
+
+			}
+		// TODO Auto-generated method stub
+
+	}
+	
+	
+	private static void openConnection() throws ClassNotFoundException, SQLException
+	{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		driver=new com.mysql.cj.jdbc.Driver();
+		DriverManager.registerDriver(driver);
+		 
+		String url="jdbc:mysql://localhost:3306/test";
+		 String dbName="test";
+		 String user="root";
+		 String password="root";
+		
+		connection=DriverManager.getConnection(url,user,password);
+		
+	}
+	
+	
+	private static void closeConnection() throws SQLException
+	{
+		if(statement!=null)
+		{
+			statement.close();
+		}
+		if(connection!=null)
+		{
+			connection.close();
+		}
+		if(driver!=null)
+		{
+			DriverManager.deregisterDriver(driver);
+		}
+	}
+
+}

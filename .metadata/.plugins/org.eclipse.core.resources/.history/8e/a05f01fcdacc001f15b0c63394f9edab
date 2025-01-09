@@ -1,0 +1,70 @@
+package edu.jspider.jdbc.operation;
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DisplayUserDetails {
+	private static Driver driver;
+	private static Connection connection;
+	private static Statement statement;
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+		openConnection();
+		
+		String fetchUser="Select * from user ";
+		statement=connection.createStatement();
+		boolean res=statement.execute(fetchUser);
+		// TODO Auto-generated method stub
+		System.out.println(res);
+		
+		ResultSet resultSet=statement.getResultSet();
+
+		while(resultSet.next())
+		{
+		int id=	resultSet.getInt("uid");
+		String name=	resultSet.getString("name");
+		String email=	 resultSet.getString("email");
+		long mobile=resultSet.getLong("mobile");
+		String password=resultSet.getString("password");
+		System.out.println("Name : "+name+"\nEmail :" +email + "\nMobile Number : "+mobile+ " \nPassword : "+password);
+		System.out.println("==============================================");
+		}
+		
+		
+		closeConnection();
+		
+	}
+	public static void openConnection() throws ClassNotFoundException, SQLException
+	{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		driver=new com.mysql.cj.jdbc.Driver();
+		DriverManager.registerDriver(driver);
+		
+		String url="jdbc:mysql://localhost:3306/test";
+		String user="root";
+		String password="root";
+		
+		connection=DriverManager.getConnection(url,user,password);
+		
+	}
+	public static void closeConnection() throws SQLException
+	{
+		if(statement!=null)
+		{
+			statement.close();
+		}
+		if(connection!=null)
+		{
+			connection.close();
+		}
+		if(driver!=null)
+		{
+			DriverManager.deregisterDriver(driver);
+		}
+	}
+
+}

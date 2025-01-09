@@ -1,0 +1,5 @@
+package edu.jspider.filehandling.operations;
+
+public class DeleteFile {
+
+}

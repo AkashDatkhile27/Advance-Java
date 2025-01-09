@@ -1,0 +1,5 @@
+package edu.jspider.serializationanddeserialization;
+
+public class User {
+
+}

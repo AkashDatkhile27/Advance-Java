@@ -1,0 +1,37 @@
+package resources;
+
+public class Product  {
+	private int quantity;
+
+	/**
+	 * @param quantity
+	 */
+	public Product(int quantity) {
+		super();
+		this.quantity = quantity;
+	}
+	public Product() {
+		// TODO Auto-generated constructor stub
+	}
+	public void comsume() {
+		if(quantity>0)
+			this.quantity --;
+		else {
+		try {
+			wait();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+		 System.out.println("Consumer Consume one product");
+	}
+	public void producer()
+	{
+		this.quantity++;
+		 System.out.println("Producer Produce the product");
+
+		if(quantity==10)
+			notify();
+	}
+}

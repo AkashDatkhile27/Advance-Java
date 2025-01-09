@@ -1,0 +1,38 @@
+package resources;
+
+public class Product  {
+	private int quantity;
+
+	/**
+	 * @param quantity
+	 */
+	public Product(int quantity) {
+		super();
+		this.quantity = quantity;
+	}
+	public Product() {
+		// TODO Auto-generated constructor stub
+	}
+	public void comsume() {
+		if(quantity>0)
+			this.quantity --;
+		else {
+		try {
+			wait();
+			System.out.println();	
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Consumer is in wating phase");
+		}
+		}
+		 System.out.println("Consumer Consume one product");
+	}
+	public void producer()
+	{
+		this.quantity++;
+		 System.out.println("Producer Produce the product");
+
+		if(quantity==1)
+			notify();
+	}
+}

@@ -1,0 +1,12 @@
+package edu.jspider.filehandling.operations;
+import java.util.Scanner;
+import java.io.File;
+
+public class CharStreamReadOperationUsingScanner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

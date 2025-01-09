@@ -1,0 +1,27 @@
+package edu.jspider.jdbc.operation;
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DisplayUserDetails {
+	private static Driver driver;
+	private static Connection connection;
+	private static Statement statement;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	}
+	public static void openConnection() throws ClassNotFoundException, SQLException
+	{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		driver=new com.mysql.cj.jdbc.Driver();
+		DriverManager.registerDriver(driver);
+		
+		
+	}
+
+}

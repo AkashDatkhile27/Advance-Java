@@ -1,0 +1,29 @@
+package resources;
+
+public class Product  {
+	private int quantity;
+
+	/**
+	 * @param quantity
+	 */
+	public Product(int quantity) {
+		super();
+		this.quantity = quantity;
+	}
+	public void comsume()  throws InterruptedException{
+		if(quantity>0)
+			this.quantity --;
+		else {
+		wait();
+		}
+		 System.out.println("Consumer Consume one product");
+	}
+	public void producer()
+	{
+		this.quantity++;
+		 System.out.println("Producer Produce the product");
+
+		if(quantity==10)
+			notify();
+	}
+}

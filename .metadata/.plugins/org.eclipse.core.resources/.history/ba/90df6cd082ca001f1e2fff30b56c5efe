@@ -1,0 +1,10 @@
+package edu.jspider.filehandling.operations;
+ import java.io.FileWriter;// to perform write oparation on a file of character stream
+public class WriteOperationOnFile {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
