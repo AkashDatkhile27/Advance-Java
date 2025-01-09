@@ -3,7 +3,7 @@
 PLUGINS_NOT_ACTIVATED_ON_STARTUP=;org.eclipse.m2e.discovery;
 eclipse.preferences.version=1
 org.eclipse.jdt.ui.ColoredLabels.match_highlight=206,92,0
-org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands/>
+org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands>\r\n<keyBinding contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+SHIFT+S"/>\r\n<keyBinding commandId\="org.eclipse.ui.file.saveAll" contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+S"/>\r\n</org.eclipse.ui.commands>
 org.eclipse.ui.ide.systemDefault.org.eclipse.dltk.ui.documentation.backgroundColor=81,86,88
 org.eclipse.ui.ide.systemDefault.org.eclipse.jdt.ui.Javadoc.backgroundColor=255,255,225
 org.eclipse.ui.ide.systemDefault.org.eclipse.php.ui.documentation.backgroundColor=81,86,88

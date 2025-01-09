@@ -1,0 +1,68 @@
+ORM - Object relational mapping
+	  used for overcome jdbc limitations
+	  ORM tools are built over jdbc itself
+	  ORM eliminate boilerplate code
+	  1.Tables mapped as classes
+	  2.Columns mapped as Non Static Properties
+	  3.records mapped as objects with values
+	  
+	  
+		 JAVA <------>JPA<---------->ORM <--------------->JDBC <----> Driver <-----> Database app
+		  App						TOOL  		  
+		
+			ORM have Abstraction layer
+	
+		ORM tools - Hibernate
+					Eclipse links
+					top links
+					Open JPA
+					MyBatis
+		All orm tools are incompatible to each-other migration from one orm tool to another orm tool is not fisible solution
+		
+		to overcome this limition of orm JPA (JAVA PERSITENCE API)is developed
+			JPA provides common standards which will be implemented by all the Orm
+			.It contins set of interface or abstract classes which will be used by orm
+					
+		Hibernate --  widely used orm tool its open source
+		
+		
+		JAVA APP - DAO-DTO-DATABASE APP
+		
+HIBERNATE JPA
+	2 layers
+	   DAO  DATA ACCESS OBJECT  - to access data from the object- contains all logic  this layer decides which operations can be perform on DTO 
+	   DTO	DATA TRANSFER OBJECT  - to transfer data from database app to java app or vice versa -- storing  all the entity
+	   
+	   layers can be represented using packages.
+	   
+	   
+	   
+	   maven Project 
+	    POM.xml - Project Object Model 
+	    
+	    
+	    
+	    <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+		<dependency>
+		    <groupId>com.mysql</groupId>
+		    <artifactId>mysql-connector-j</artifactId>
+		    <version>8.3.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>5.6.15.Final</version>
+		</dependency>
+
+  	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.24</version>
+		    <scope>provided</scope>
+		</dependency>
+	    
+	    
+	  
